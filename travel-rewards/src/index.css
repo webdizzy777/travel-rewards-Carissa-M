@@ -1,1 +1,200 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-image: url("./assets/Tropical-Beach.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
 
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 20px;
+}
+
+header img {
+  max-width: 150px;
+  height: auto;
+}
+
+footer {
+  width: 100%;
+  background-color: aliceblue;
+  height: 150px;
+  box-sizing: border-box;
+  padding: 30px 50px 50px 30px;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  display: inline-block;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  font-size: 1.5em;
+}
+
+a {
+  font-weight: bold;
+  color: rgb(233, 134, 14);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  border: 2px solid aliceblue;
+  background-color: rgba(240, 248, 255, 0.5);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: rgb(233, 134, 14);
+  cursor: pointer;
+  transition: border-color 0.25s;
+  margin: 10px;
+}
+
+button:hover {
+  border-color: aliceblue;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+th,
+td {
+  border: 1px solid;
+  padding: 8px;
+  border-color: #a8afb3;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #f1f3ff;
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.loginForm {
+  color: aliceblue;
+  text-align: left;
+  font-size: 16px;
+}
+
+.logInButton {
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: rgb(233, 134, 14);
+  cursor: pointer;
+  margin: 10px;
+  width: 100%;
+}
+
+.blackOpaque {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.left {
+  text-align: left;
+}
+
+.card {
+  padding: 2em;
+  background-color: aliceblue;
+  border-radius: 8px;
+  margin: 5%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.sideBySideCard {
+  flex: 1 1 45%;
+  min-width: 250px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 2em;
+  background-color: aliceblue;
+}
+
+.sideBySideFooter {
+  flex: 1 1 45%;
+  min-width: 250px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 2em;
+  background-color: aliceblue;
+}
+
+.addCardInput {
+  border: 2px solid #000000;
+}
+
+.center {
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .sideBySide {
+    flex: 1 1 100%;
+  }
+}

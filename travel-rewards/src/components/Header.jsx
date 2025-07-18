@@ -1,8 +1,13 @@
+import Logo from '../assets/logo.png'
+
 function Header(){
     return(
         <>
             <header>
-                <h1>Travel Rewards!</h1>
+                <div>
+                    <img src={Logo} alt="Travel Logo" />
+                    <h1>Miles & Smiles</h1>
+                </div>
             </header>
         </>
     );
