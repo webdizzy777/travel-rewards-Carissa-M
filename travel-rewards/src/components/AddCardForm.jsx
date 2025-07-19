@@ -5,23 +5,25 @@ import { Link } from "react-router";
 
 function AddCardForm({cards, setCards}){
 
-    // Creating a new card array in App.jsx with the initial card array passed into useState and passing it as a prop to get updated here, as well as a prop to the dashboard to display. Creating a getter variable and a setter function to capture the values entered as input to the form, using e.target.value to set the variables on each input change. On click of the Add Card button, setting the cards variable using the spread operator to keep the original array intact and append the new card object that contains the set variables as values for the keys.
-
-    const [cardNm, setCardNm] = useState("");
-    const [cardGs, setCardGs] = useState();
-    const [cardRs, setCardRs] = useState();
-    const [cardSp, setCardSp] = useState();
-    const [cardDs, setCardDs] = useState();
-    const [cardWh, setCardWh] = useState();
-    const [cardOn, setCardOs] = useState();
-    const [cardUt, setCardUt] = useState();
-    const [cardIn, setCardIn] = useState();
-    const [cardPh, setCardPh] = useState();
-    const [cardTr, setCardTr] = useState();
-    const [cardOh, setCardOh] = useState();
-    const [cardExp, setCardExp] = useState();
-    const [cardExD, setCardExD] = useState();
+    //creating variable and setter function for state to remember the variable data
+    const [cardNm, setCardNm] = useState("Card Name");
+    const [cardGs, setCardGs] = useState(0);
+    const [cardRs, setCardRs] = useState(0);
+    const [cardSp, setCardSp] = useState(0);
+    const [cardDs, setCardDs] = useState(0);
+    const [cardWh, setCardWh] = useState(0);
+    const [cardOn, setCardOs] = useState(0);
+    const [cardUt, setCardUt] = useState(0);
+    const [cardIn, setCardIn] = useState(0);
+    const [cardPh, setCardPh] = useState(0);
+    const [cardTr, setCardTr] = useState(0);
+    const [cardOh, setCardOh] = useState(0);
+    const [cardExp, setCardExp] = useState("");
+    const [cardExD, setCardExD] = useState("2025-01-01");
+    const [cardNbT, setCardNbT] = useState("");
+    const [cardNble, setCardNble] = useState("");
  
+    //creating function to fill the new card with the initial card data plus the new values we set.
     function handleAddCard(){
         const idN = (cards.length) + 1;
         const newCard = {
@@ -39,11 +41,14 @@ function AddCardForm({cards, setCards}){
             travel: cardTr,
             other: cardOh,
             expiringRewards: cardExp,
-            expiringDate: cardExD
+            expiringDate: cardExD,
+            notableBenefitTitle: cardNbT,
+            notableBenefit: cardNble
         }
         setCards([...cards, newCard]);
     }
 
+    //  using e.target.value to set the variables on each by capturing the value of the event input change. 
     function handleAddName(e){
         setCardNm(e.target.value);
     }
@@ -100,68 +105,84 @@ function AddCardForm({cards, setCards}){
         setCardExD(e.target.value);
     }
 
+    function handleAddNotableTitle(e){
+        setCardNbT(e.target.value);
+    }
+
+    function handleAddNotableBenefit(e){
+        setCardNble(e.target.value);
+    }
+
     return(
         <>
             <Header></Header>
             <main>
                 <div className="card">
-                    <label htmlFor="cardName"><span classNameName=""><b>Card Name</b></span>
+                    <label htmlFor="cardName"><b>Card Name</b>
                         <br />
                         <input type="text" className="addCardInput" value={cardNm} onChange={handleAddName} required />
                     </label>
                     <br />
-                    <label htmlFor="gas"><span classNameName=""><b>Gas Points</b></span>
+                    <label htmlFor="gas"><b>Gas Points</b>
                         <br />
                         <input type="number" className="addCardInput" value={cardGs} onChange={handleAddGas} required />
                     </label>
-                    <label htmlFor="restaurant"><span classNameName=""><b>Restaurant Points</b></span>
+                    <label htmlFor="restaurant"><b>Restaurant Points</b>
                         <br />
                         <input type="number" className="addCardInput" value={cardRs} onChange={handleAddRestaurant} required />
                     </label>
                     <br />
-                    <label htmlFor="supermarket"><span classNameName=""><b>Supermarket Points</b></span>
+                    <label htmlFor="supermarket"><b>Supermarket Points</b>
                         <br />
                         <input type="number" className="addCardInput" value={cardSp} onChange={handleAddSupermarket} />
                     </label>
-                    <label htmlFor="discount"><span classNameName=""><b>Discount Store Points</b></span>
+                    <label htmlFor="discount"><b>Discount Store Points</b>
                         <br />
                         <input type="number" className="addCardInput" value={cardDs} onChange={handleAddDiscount} />
                     </label>
-                    <label htmlFor="wholesale"><span classNameName=""><b>Wholesale Store Points</b></span>
+                    <label htmlFor="wholesale"><b>Wholesale Store Points</b>
                         <br />
                         <input type="number" className="addCardInput" value={cardWh} onChange={handleAddWholesale} />
                     </label>
-                    <label htmlFor="online"><span classNameName=""><b>Online Shopping Points</b></span>
+                    <label htmlFor="online"><b>Online Shopping Points</b>
                         <br />
                         <input type="number" className="addCardInput" value={cardDs} onChange={handleAddOnlineShopping} />
                     </label>
-                    <label htmlFor="utilities"><span classNameName=""><b>Utility Points</b></span>
+                    <label htmlFor="utilities"><b>Utility Points</b>
                         <br />
                         <input type="number" className="addCardInput" value={cardUt} onChange={handleAddUtilities} />
                     </label>
-                    <label htmlFor="internet"><span classNameName=""><b>Internet Points</b></span>
+                    <label htmlFor="internet"><b>Internet Points</b>
                         <br />
                         <input type="number" className="addCardInput" value={cardIn} onChange={handleAddInternet} />
                     </label>
-                    <label htmlFor="phone"><span classNameName=""><b>Phone Points</b></span>
+                    <label htmlFor="phone"><b>Phone Points</b>
                         <br />
                         <input type="number" className="addCardInput" value={cardPh} onChange={handleAddPhone} />
                     </label>
-                    <label htmlFor="travel"><span classNameName=""><b>Travel Points</b></span>
+                    <label htmlFor="travel"><b>Travel Points</b>
                         <br />
                         <input type="number" className="addCardInput" value={cardTr} onChange={handleAddTravel} />
                     </label>
-                    <label htmlFor="other"><span classNameName=""><b>Other Spend Points</b></span>
+                    <label htmlFor="other"><b>Other Spend Points</b>
                         <br />
                         <input type="number" className="addCardInput" value={cardOh} onChange={handleAddOther} />
                     </label>
-                    <label htmlFor="expiring"><span classNameName=""><b>Rewards That Expire</b></span>
+                    <label htmlFor="expiring"><b>Reward That Expires</b>
                         <br />
                         <input type="text" className="addCardInput" value={cardExp} onChange={handleAddExpiringRewards} />
                     </label>
-                    <label htmlFor="expDate"><span classNameName=""><b>Use By Date</b></span>
+                    <label htmlFor="expDate"><b>Use By Date</b>
                         <br />
                         <input type="date" className="addCardInput" value={cardExD} onChange={handleAddExpiringDate} />
+                    </label>
+                    <label htmlFor="notableTitle"><b>Title for Notable Benefit</b>
+                        <br />
+                        <input type="text" className="addCardInput" value={cardNbT} onChange={handleAddNotableTitle} />
+                    </label>
+                    <label htmlFor="notable"><b>Use By Date</b>
+                        <br />
+                        <input type="text" className="addCardInput" value={cardNble} onChange={handleAddNotableBenefit} />
                     </label>
                     <br /><br />
                     <Link to="/dashboard"><button onClick={handleAddCard}>Add Card</button></Link>

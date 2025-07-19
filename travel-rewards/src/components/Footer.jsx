@@ -4,7 +4,7 @@ function Footer(){
     return(
         <>
             <footer>
-                <ul>
+                <ul className="footer-ul">
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/dashboard'>Dashboard</Link></li>
                     <li><Link to='/about'>About</Link></li>

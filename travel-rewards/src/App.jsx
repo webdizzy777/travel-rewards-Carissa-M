@@ -1,4 +1,3 @@
-import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home.jsx';
 import Dashboard from './components/Dashboard.jsx';
@@ -6,6 +5,8 @@ import About from './components/About.jsx';
 import AddCardForm from './components/AddCardForm.jsx';
 import PointsTable from './components/PointsTable.jsx';
 import { useState } from 'react';
+import ExpiringRewards from './components/ExpiringRewards.jsx';
+import NotableBenefits from './components/NotableBenefits.jsx';
 
 const initialCards = [
     {
@@ -23,7 +24,9 @@ const initialCards = [
         travel: 1,
         other: 1,
         expiringRewards: "",
-        expiringDate: ""
+        expiringDate: "",
+        notableBenefitTitle: "",
+        notableBenefit: ""
     },
     {
         id:2,
@@ -40,7 +43,28 @@ const initialCards = [
         travel: 5,
         other: 3,
         expiringRewards: "40,000 Point Night Award",
-        expiringDate: "11/01/2025"
+        expiringDate: "11/01/2025",
+        notableBenefitTitle: "Redeem 3 Nights, get 4th Night Free",
+        notableBenefit: "The fourth Reward Night is free when you redeem points for any stay of four or more nights."
+    },
+    {
+        id:3,
+        cardName: "Delta SkyMiles Platinum",
+        gas: 1,
+        restaurant: 2,
+        supermarket: 2,
+        discount: 1,
+        wholesale: 1,
+        onlineShopping: 1,
+        utilities: 1,
+        internet: 1,
+        phone: 1,
+        travel: 3,
+        other: 1,
+        expiringRewards: "Annual Companion Certificate",
+        expiringDate: "09/01/2025",
+        notableBenefitTitle: "TakeOff 15",
+        notableBenefit: "Get 15% off anytime you book Award Travel with miles on Delta flights when using delta.com and the Fly Delta app."
     }
 ];
 
@@ -58,6 +82,8 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/AddCardForm' element={<AddCardForm cards={cards} setCards={setCards} />} />
           <Route path='/PointsTable' element={<PointsTable cards={cards}/>} />
+          <Route path='/ExpiringRewards' element={<ExpiringRewards cards={cards} />} />
+          <Route path='/NotableBenefits' element={<NotableBenefits cards={cards} />} />
         </Routes>
       </Router>
     </>

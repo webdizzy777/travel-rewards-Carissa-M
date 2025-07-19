@@ -1,4 +1,4 @@
-import AddCard from './AddCard.jsx';
+//import AddCard from './AddCard.jsx';
 
 function PointsTable({cards}){
 
@@ -52,7 +52,8 @@ function PointsTable({cards}){
 
     return(
         <div className="card">
-            <table>
+            <h2  className="center">Points Table</h2>
+            <table >
                 <tr>
                     <th>Card Name</th>
                     {cardNames}

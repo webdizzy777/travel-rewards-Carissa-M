@@ -100,7 +100,7 @@ button:hover {
   border-color: aliceblue;
 }
 
-ul {
+.footer-ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -116,6 +116,7 @@ td {
 
 table {
   border-collapse: collapse;
+  margin: 0 auto;
 }
 
 th {
