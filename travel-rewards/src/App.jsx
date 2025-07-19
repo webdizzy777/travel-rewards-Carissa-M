@@ -4,6 +4,7 @@ import Home from './components/Home.jsx';
 import Dashboard from './components/Dashboard.jsx';
 import About from './components/About.jsx';
 import AddCardForm from './components/AddCardForm.jsx';
+import PointsTable from './components/PointsTable.jsx';
 import { useState } from 'react';
 
 const initialCards = [
@@ -56,6 +57,7 @@ function App() {
           <Route path='/dashboard' element={<Dashboard cards={cards}/>} />
           <Route path='/about' element={<About />} />
           <Route path='/AddCardForm' element={<AddCardForm cards={cards} setCards={setCards} />} />
+          <Route path='/PointsTable' element={<PointsTable cards={cards}/>} />
         </Routes>
       </Router>
     </>
