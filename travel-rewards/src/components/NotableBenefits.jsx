@@ -3,13 +3,14 @@ function NotableBenefits({cards}){
     const cardNotableBen = cards
     .filter(card => (card.notableBenefit !== ""))
     .map((card)=>(
-        <li key={card.id}>
+        <li className="benefit-li" key={card.id}>
             <b>{card.cardName}:</b>
             <ul>
                 <li><b><i>{card.notableBenefitTitle}: </i></b>  
                 {card.notableBenefit}</li>
             </ul>
         </li>
+        
     ))
 
     return(

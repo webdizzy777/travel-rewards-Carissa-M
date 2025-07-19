@@ -9,6 +9,7 @@ function Footer(){
                     <li><Link to='/dashboard'>Dashboard</Link></li>
                     <li><Link to='/about'>About</Link></li>
                 </ul>
+                
             </footer>
         </>
     );

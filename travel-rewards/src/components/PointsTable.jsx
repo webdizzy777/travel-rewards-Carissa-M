@@ -3,7 +3,12 @@
 function PointsTable({cards}){
 
     const cardNames = cards.map((cardN)=>(
-        <td key={cardN.id}>{cardN.cardName}</td>
+        <td key={cardN.id}>
+            {cardN.cardName}&nbsp;
+            <span class="material-symbols-outlined">
+                delete
+            </span>
+        </td>
     ));
 
     const cardGas = cards.map((cardG)=>(

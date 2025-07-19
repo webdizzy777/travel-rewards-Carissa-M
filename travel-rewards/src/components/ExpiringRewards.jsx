@@ -1,7 +1,19 @@
 function ExpiringRewards({cards}){
     
-   
-    
+    //when the used icon is pressed remove the benefit 
+    //maping through the cards for the card with the matching id, set the array to only change the benefit
+    // function handleRemoveBenefit(id){
+    //     setCards(c => 
+    //         c.map(card =>{
+    //                 if(card.id === id){
+    //                     return {...card, expiringRewards: ""}
+    //                 } else{
+    //                    return  card
+    //                 }
+    //             }
+    //         )
+    //     );
+    // }
 
     const cardExpiringRewards = cards
     //filter out cards that don't have text in the array for this benefit
@@ -11,8 +23,9 @@ function ExpiringRewards({cards}){
     //map through the cards to make a list item with the relevant information
     //if the date picker is used, split it and compose with correct format
     // use a regex to count digits and literal - and test if it matches the date format
-    //cast the string to a date to sort it
+    //cast the string to a date obj to sort it
     .map((card)=>{
+
         let formatedDate = "";
         if(/^\d{4}-\d{2}-\d{2}$/.test(card.expiringDate)){
             const [year, month, day] = card.expiringDate.split("-");
@@ -22,11 +35,14 @@ function ExpiringRewards({cards}){
         }
         
         return(
-            <li key={card.id}>
+            <li className="benefit-li" key={card.id}>
                 <b>{card.cardName}: </b>
                 {card.expiringRewards}
                 <b> Use by: </b>
-                {formatedDate}
+                {formatedDate} &nbsp;
+                {/* <span className="material-symbols-outlined" onClick={() => handleRemoveBenefit(card.id)}>
+                    check_circle
+                </span> */}
             </li>
         );
     });
