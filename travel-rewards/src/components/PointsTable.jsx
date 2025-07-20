@@ -19,7 +19,8 @@ function PointsTable({cards}){
     const maxWholesaleValue = Math.max(...maxWholesale);
 
     const maxOnlineShopping = cards.map(card => card.onlineShopping);
-    const maxOnlineShoppingValue = Math.max(maxOnlineShopping);
+    const maxOnlineShoppingValue = Math.max(...maxOnlineShopping);
+    console.log(maxOnlineShoppingValue);
 
     const maxUtilities = cards.map(card => card.utilities);
     const maxUtilitiesValue = Math.max(...maxUtilities);
