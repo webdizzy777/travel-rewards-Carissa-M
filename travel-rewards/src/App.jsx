@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './components/Home.jsx';
 import Dashboard from './components/Dashboard.jsx';
 import About from './components/About.jsx';
@@ -70,15 +70,20 @@ const initialCards = [
 
 function App() {
 
+  //create a cards variable and a setter function to modify cards and pass to components
+  //set the default value of the cards array to our initial card array
   const [cards, setCards] = useState(initialCards);
+
+  //create a variable to hold if user is logged in and a setter function to set if user is logged in. 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <>
-      {/* Route the user to the relevant components when the URL parameter is recognized */}
+      {/* Route the user to the relevant components when the URL parameter is recognized - check that value of isLogged in before allowing to router to dashboard, otherwise route to the login screen. Use replace to overwrite the history stack so back doesn't take to dashboard.*/}
       <Router>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/dashboard' element={<Dashboard cards={cards}/>} />
+          <Route path='/' element={<Home setIsLoggedIn={setIsLoggedIn} />} />
+          <Route path='/dashboard' element={isLoggedIn ? <Dashboard cards={cards}/> : <Navigate to="/" replace />} />
           <Route path='/about' element={<About />} />
           <Route path='/AddCardForm' element={<AddCardForm cards={cards} setCards={setCards} />} />
           <Route path='/PointsTable' element={<PointsTable cards={cards}/>} />

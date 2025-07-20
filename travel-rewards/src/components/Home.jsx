@@ -3,12 +3,11 @@ import Footer from './Footer.jsx';
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 
-function Home(){
+function Home({setIsLoggedIn}){
 
     //login details
     const defaultEmail = "launchcode@unit1.com";
     const defaultPassword = "password";
-    let isLoggedIn = false;
     let errorMsg = (<p className='center blackOpaque'>
                         <span class="material-symbols-outlined">
                             warning
@@ -25,15 +24,20 @@ function Home(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    // utilize useStare to be able to set the display error to tue below
+    // utilize useState to be able to set the display error to tue below
     const [displayError, setDisplayError] = useState(false)
 
     //we don't want the page to reload on submission
     //if our username and password match the default values set logged into true and navigate to dashboard or else display error
     function handleLogIn(e){
         e.preventDefault();
-        email === defaultEmail && password === defaultPassword ? isLoggedIn = true : isLoggedIn = false;
-        isLoggedIn ? navigate('/dashboard') : setDisplayError(true);
+        if(email === defaultEmail && password === defaultPassword){
+            setIsLoggedIn(true);
+            navigate('/dashboard');
+        } else {
+            setDisplayError(true);
+        }
+
     }
 
     return(
@@ -57,8 +61,7 @@ function Home(){
                             {displayError ? errorMsg : null}
                         <button type='submit' className="logInButton">Login</button>
                     </form>
-                    {/* <p><span className="blackOpaque "><a href="#">Forgot Password?</a> or <a href="#">Sign Up</a></span></p> */}
-                </div>
+                 </div>
             </main>
             <Footer></Footer>
         </>

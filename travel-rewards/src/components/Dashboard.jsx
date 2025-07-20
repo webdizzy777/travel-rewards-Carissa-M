@@ -13,7 +13,6 @@ function Dashboard({cards}){
             <main>
                 <div className='center'>
                     <AddCard></AddCard>
-                    <button>Edit Card</button>
                 </div>
                 <PointsTable cards={cards}></PointsTable>
                 <div className='container'>
