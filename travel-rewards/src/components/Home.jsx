@@ -1,6 +1,6 @@
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useState } from 'react';
 
 function Home({setIsLoggedIn}){
@@ -62,6 +62,7 @@ function Home({setIsLoggedIn}){
                         <button type='submit' className="logInButton">Login</button>
                     </form>
                  </div>
+                  <p className='card'>Miles & Smiles is your one-stop destination to track all your travel rewards so you can use them before you lose them! Check out our <Link to='/about'>About Us</Link> page to learn more.</p>
             </main>
             <Footer></Footer>
         </>
