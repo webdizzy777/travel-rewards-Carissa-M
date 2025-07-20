@@ -102,11 +102,11 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home setIsLoggedIn={setIsLoggedIn} />} />
-          <Route path='/dashboard' element={isLoggedIn ? <Dashboard cards={cards}/> : <Navigate to="/" replace />} />
+          <Route path='/dashboard' element={isLoggedIn ? <Dashboard cards={cards} setCards={setCards} /> : <Navigate to="/" replace />} />
           <Route path='/about' element={<About />} />
           <Route path='/AddCardForm' element={<AddCardForm cards={cards} setCards={setCards} />} />
           <Route path='/PointsTable' element={<PointsTable cards={cards}/>} />
-          <Route path='/ExpiringRewards' element={<ExpiringRewards cards={cards}/>} />
+          <Route path='/ExpiringRewards' element={<ExpiringRewards cards={cards} setCards={setCards}/>} />
           <Route path='/NotableBenefits' element={<NotableBenefits cards={cards} />} />
         </Routes>
       </Router>
