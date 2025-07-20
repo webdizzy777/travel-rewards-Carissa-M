@@ -111,6 +111,9 @@ td {
   padding: 8px;
   border-color: #a8afb3;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 th {
@@ -119,10 +122,14 @@ th {
 
 table {
   border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
 }
 
 .tableContainer {
   overflow-x: auto;
+  width: 100%;
 }
 
 .loginForm {
@@ -201,7 +208,7 @@ table {
 }
 
 .green {
-  color: #259a6f;
+  color: #34ba89;
 }
 
 /*On screens that are smaller than 576 px make my side by  side cards stack vertically by making them take up the full width of the container by starting at 100% width and allowed to grow to fill and shrink to avoid overflow*/
@@ -209,5 +216,12 @@ table {
   .sideBySideCard,
   .sideBySideFooter {
     flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  th, td {
+    padding: 4px;
+    font-size: 0.8rem;
   }
 }

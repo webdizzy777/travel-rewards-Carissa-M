@@ -38,11 +38,8 @@ function PointsTable({cards}){
 
     //Fill the table, add green style if value matches the max
     const cardNames = cards.map((cardN)=>(
-        <td key={cardN.id}>
-            {cardN.cardName}&nbsp;
-            <span class="material-symbols-outlined">
-                delete
-            </span>
+        <td key={cardN.id} title={cardN.cardName}>
+            {cardN.cardName}
         </td>
     ));
 
@@ -112,63 +109,62 @@ function PointsTable({cards}){
         </td>
     ));
     
-
     return(
         <div className="card">
             <h2  className="center">Points Table</h2>
             <div className="tableContainer">
                 <table >
                     <tr>
-                        <th>Card Name</th>
+                        <th title="Card Name">Card Name</th>
                         {cardNames}
                     </tr>
                     <tr>
-                        <th>Gas</th>
+                        <th title="Gas">Gas</th>
                         {cardGas}
                     </tr>
                     <tr>
-                        <th>Restaurant</th>
+                        <th title="Restaurant">Restaurant</th>
                         {cardRestaurant}
                     </tr>
                     <tr>
-                        <th>Supermarket</th>
+                        <th title="Supermarket">Supermarket</th>
                         {cardSupermarket}
                     </tr>
                     <tr>
-                        <th>Discount</th>
+                        <th title="Discount">Discount</th>
                         {cardDiscount}
                     </tr>
                     <tr>
-                        <th>Wholesale</th>
+                        <th title="Wholesale">Wholesale</th>
                         {cardWholesale}
                     </tr>
                     <tr>
-                        <th>Online Shopping</th>
+                        <th title="Online Shopping">Online Shopping</th>
                         {cardOShopping}
                     </tr>
                     <tr>
-                        <th>Utilities</th>
+                        <th title="Utilities">Utilities</th>
                         {cardUtilities}
                     </tr>
                     <tr>
-                        <th>Internet</th>
+                        <th title="Internet">Internet</th>
                         {cardInternet}
                     </tr>
                     <tr>
-                        <th>Phone</th>
+                        <th title="Phone">Phone</th>
                         {cardPhone}
                     </tr>
                     <tr>
-                        <th>Travel</th>
+                        <th title="Travel">Travel</th>
                         {cardTravel}
                     </tr>
                     <tr>
-                        <th>Other</th>
+                        <th title="Other">Other</th>
                         {cardOther}
                     </tr>
                 </table>
             </div>
-        </div>
+        </div>        
     )
 
 }
