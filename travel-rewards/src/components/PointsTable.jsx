@@ -20,7 +20,6 @@ function PointsTable({cards}){
 
     const maxOnlineShopping = cards.map(card => card.onlineShopping);
     const maxOnlineShoppingValue = Math.max(...maxOnlineShopping);
-    console.log(maxOnlineShoppingValue);
 
     const maxUtilities = cards.map(card => card.utilities);
     const maxUtilitiesValue = Math.max(...maxUtilities);
@@ -115,54 +114,56 @@ function PointsTable({cards}){
             <h2  className="center">Points Table</h2>
             <div className="tableContainer">
                 <table >
-                    <tr>
-                        <th title="Card Name">Card Name</th>
-                        {cardNames}
-                    </tr>
-                    <tr>
-                        <th title="Gas">Gas</th>
-                        {cardGas}
-                    </tr>
-                    <tr>
-                        <th title="Restaurant">Restaurant</th>
-                        {cardRestaurant}
-                    </tr>
-                    <tr>
-                        <th title="Supermarket">Supermarket</th>
-                        {cardSupermarket}
-                    </tr>
-                    <tr>
-                        <th title="Discount">Discount</th>
-                        {cardDiscount}
-                    </tr>
-                    <tr>
-                        <th title="Wholesale">Wholesale</th>
-                        {cardWholesale}
-                    </tr>
-                    <tr>
-                        <th title="Online Shopping">Online Shopping</th>
-                        {cardOShopping}
-                    </tr>
-                    <tr>
-                        <th title="Utilities">Utilities</th>
-                        {cardUtilities}
-                    </tr>
-                    <tr>
-                        <th title="Internet">Internet</th>
-                        {cardInternet}
-                    </tr>
-                    <tr>
-                        <th title="Phone">Phone</th>
-                        {cardPhone}
-                    </tr>
-                    <tr>
-                        <th title="Travel">Travel</th>
-                        {cardTravel}
-                    </tr>
-                    <tr>
-                        <th title="Other">Other</th>
-                        {cardOther}
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <th title="Card Name">Card Name</th>
+                            {cardNames}
+                        </tr>
+                        <tr>
+                            <th title="Gas">Gas</th>
+                            {cardGas}
+                        </tr>
+                        <tr>
+                            <th title="Restaurant">Restaurant</th>
+                            {cardRestaurant}
+                        </tr>
+                        <tr>
+                            <th title="Supermarket">Supermarket</th>
+                            {cardSupermarket}
+                        </tr>
+                        <tr>
+                            <th title="Discount">Discount</th>
+                            {cardDiscount}
+                        </tr>
+                        <tr>
+                            <th title="Wholesale">Wholesale</th>
+                            {cardWholesale}
+                        </tr>
+                        <tr>
+                            <th title="Online Shopping">Online Shopping</th>
+                            {cardOShopping}
+                        </tr>
+                        <tr>
+                            <th title="Utilities">Utilities</th>
+                            {cardUtilities}
+                        </tr>
+                        <tr>
+                            <th title="Internet">Internet</th>
+                            {cardInternet}
+                        </tr>
+                        <tr>
+                            <th title="Phone">Phone</th>
+                            {cardPhone}
+                        </tr>
+                        <tr>
+                            <th title="Travel">Travel</th>
+                            {cardTravel}
+                        </tr>
+                        <tr>
+                            <th title="Other">Other</th>
+                            {cardOther}
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>        
