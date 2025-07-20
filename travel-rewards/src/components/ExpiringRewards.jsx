@@ -38,8 +38,8 @@ function ExpiringRewards({cards}){
             <li className="benefit-li" key={card.id}>
                 <b>{card.cardName}: </b>
                 {card.expiringRewards}
-                <b> Use by: </b>
-                {formatedDate} &nbsp;
+                <b> Use by: &nbsp;
+                <span className="green">{formatedDate}</span></b> &nbsp;
                 {/* <span className="material-symbols-outlined" onClick={() => handleRemoveBenefit(card.id)}>
                     check_circle
                 </span> */}

@@ -6,7 +6,7 @@ function NotableBenefits({cards}){
         <li className="benefit-li" key={card.id}>
             <b>{card.cardName}:</b>
             <ul>
-                <li><b><i>{card.notableBenefitTitle}: </i></b>  
+                <li><b><i><span className="green">{card.notableBenefitTitle}:</span> </i></b>  
                 {card.notableBenefit}</li>
             </ul>
         </li>
