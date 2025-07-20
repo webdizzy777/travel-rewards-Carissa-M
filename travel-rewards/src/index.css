@@ -10,12 +10,15 @@ body {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  box-sizing: border-box;
 }
 
+/*flex the children of root to be able to stack vertically and force to never be shorter than the viewport*/
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 header {
@@ -35,18 +38,20 @@ header img {
 footer {
   width: 100%;
   background-color: aliceblue;
-  /* height: 250px; */
   box-sizing: border-box;
   padding: 30px 50px 30px 50px;
 }
 
+/*Take up all remaining space after the header and footer take theirs, keep content from going to wide, make padding relevant to root font size for scalability, center the block elements with auto left and right margins*/
 main {
   flex: 1;
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
+/*Heading will scale based on its parent element and have the ability to sit inline with an image*/
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -96,7 +101,7 @@ button:hover {
   border-color: aliceblue;
 }
 
-.benefit-li{
+.benefit-li {
   padding-bottom: 10px;
 }
 
@@ -108,13 +113,12 @@ td {
   text-align: center;
 }
 
-table {
-  border-collapse: collapse;
-  margin: 0 auto;
-}
-
 th {
   background-color: #f1f3ff;
+}
+
+table {
+  border-collapse: collapse;
 }
 
 .tableContainer {
@@ -152,14 +156,17 @@ th {
   background-color: aliceblue;
   border-radius: 8px;
   margin: 5%;
+  box-sizing: border-box;
 }
 
+/*Children become flex items and allow them to flex to the next line, allow a gap between the items of 2x the font size of the parent (container)*/
 .container {
   display: flex;
   flex-wrap: wrap;
   gap: 2em;
 }
 
+/*grow and shrink as needed and fill 45% to allow for gap, use border box to include padding and border in the computations*/
 .sideBySideCard {
   flex: 1 1 45%;
   min-width: 250px;
@@ -189,15 +196,17 @@ th {
 }
 
 .purple {
-  color:#4B0082;
+  color: #4b0082;
 }
 
-.green{
-  color:#259a6f;
+.green {
+  color: #259a6f;
 }
 
-@media (max-width: 576px) {
-  .sideBySide {
+/*On screens that are smaller than 576 px make my side by  side cards stack vertically by making them take up the full width of the container by starting at 100% width and allowed to grow to fill and shrink to avoid overflow*/
+@media (max-width: 768px) {
+  .sideBySideCard,
+  .sideBySideFooter {
     flex: 1 1 100%;
   }
 }

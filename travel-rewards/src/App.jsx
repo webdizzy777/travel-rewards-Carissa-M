@@ -65,6 +65,25 @@ const initialCards = [
         expiringDate: "09/01/2025",
         notableBenefitTitle: "TakeOff 15",
         notableBenefit: "Get 15% off anytime you book Award Travel with miles on Delta flights when using delta.com and the Fly Delta app."
+    },
+    {
+        id:4,
+        cardName: "Citi Strata Premier",
+        gas: 3,
+        restaurant: 3,
+        supermarket: 3,
+        discount: 1,
+        wholesale: 1,
+        onlineShopping: 1,
+        utilities: 1,
+        internet: 1,
+        phone: 1,
+        travel: 10,
+        other: 1,
+        expiringRewards: "$100 Annual Hotel Benefit",
+        expiringDate: "12/31/2025",
+        notableBenefitTitle: "",
+        notableBenefit: ""
     }
 ];
 
