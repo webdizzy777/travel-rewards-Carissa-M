@@ -7,6 +7,7 @@ import PointsTable from './components/PointsTable.jsx';
 import { useState } from 'react';
 import ExpiringRewards from './components/ExpiringRewards.jsx';
 import NotableBenefits from './components/NotableBenefits.jsx';
+import FinancialSnapshot from './components/FinancialSnapshot.jsx';
 
 const initialCards = [
     {
@@ -26,7 +27,13 @@ const initialCards = [
         expiringRewards: "",
         expiringDate: "",
         notableBenefitTitle: "",
-        notableBenefit: ""
+        notableBenefit: "",
+        fee: 0, 
+        dateOpened: "09/05/2022",
+        apr: 25.24,
+        creditLimit: 3000,
+        balance: 500,
+        dueDate: "2nd"
     },
     {
         id:2,
@@ -45,7 +52,13 @@ const initialCards = [
         expiringRewards: "40,000 Point Night Award",
         expiringDate: "11/01/2025",
         notableBenefitTitle: "Redeem 3 Nights, get 4th Night Free",
-        notableBenefit: "The fourth Reward Night is free when you redeem points for any stay of four or more nights."
+        notableBenefit: "The fourth Reward Night is free when you redeem points for any stay of four or more nights.",
+        fee: 99, 
+        dateOpened: "05/01/2020",
+        apr: 27.59,
+        creditLimit: 6000,
+        balance: 1270,
+        dueDate: "15th"
     },
     {
         id:3,
@@ -64,7 +77,13 @@ const initialCards = [
         expiringRewards: "Annual Companion Certificate",
         expiringDate: "09/01/2025",
         notableBenefitTitle: "TakeOff 15",
-        notableBenefit: "Get 15% off anytime you book Award Travel with miles on Delta flights when using delta.com and the Fly Delta app."
+        notableBenefit: "Get 15% off anytime you book Award Travel with miles on Delta flights when using delta.com and the Fly Delta app.",
+        fee: 350, 
+        dateOpened: "12/20/2020",
+        apr: 22.54,
+        creditLimit: 7000,
+        balance: 4530,
+        dueDate: "2nd"
     },
     {
         id:4,
@@ -83,7 +102,13 @@ const initialCards = [
         expiringRewards: "$100 Annual Hotel Benefit",
         expiringDate: "12/31/2025",
         notableBenefitTitle: "",
-        notableBenefit: ""
+        notableBenefit: "",
+        fee: 95, 
+        dateOpened: "03/20/2024",
+        apr: 26.75,
+        creditLimit: 3000,
+        balance: 230,
+        dueDate: "7th"
     }
 ];
 
@@ -108,6 +133,7 @@ function App() {
           <Route path='/PointsTable' element={<PointsTable cards={cards}/>} />
           <Route path='/ExpiringRewards' element={<ExpiringRewards cards={cards} setCards={setCards}/>} />
           <Route path='/NotableBenefits' element={<NotableBenefits cards={cards} />} />
+          <Route path='/FinancialSnapshot' element={<FinancialSnapshot cards={cards} />} />
         </Routes>
       </Router>
     </>
