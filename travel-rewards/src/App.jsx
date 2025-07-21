@@ -33,7 +33,7 @@ const initialCards = [
         apr: 25.24,
         creditLimit: 3000,
         balance: 500,
-        dueDate: "2nd"
+        dueDate: 2
     },
     {
         id:2,
@@ -58,7 +58,7 @@ const initialCards = [
         apr: 27.59,
         creditLimit: 6000,
         balance: 1270,
-        dueDate: "15th"
+        dueDate: 15
     },
     {
         id:3,
@@ -83,7 +83,7 @@ const initialCards = [
         apr: 22.54,
         creditLimit: 7000,
         balance: 4530,
-        dueDate: "2nd"
+        dueDate: 2
     },
     {
         id:4,
@@ -108,7 +108,7 @@ const initialCards = [
         apr: 26.75,
         creditLimit: 3000,
         balance: 230,
-        dueDate: "7th"
+        dueDate: 7
     }
 ];
 

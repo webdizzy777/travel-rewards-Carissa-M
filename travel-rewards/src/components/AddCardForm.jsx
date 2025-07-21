@@ -266,14 +266,14 @@ function AddCardForm({cards, setCards}){
 
                     <label htmlFor="due"><b>Day of Month Due</b>
                         <br />
-                        <input type="text" className="addCardInput" id="due" value={cardDue} onChange={handleAddDue} />
+                        <input type="number" className="addCardInput" id="due" value={cardDue} onChange={handleAddDue} />
                     </label>
 
                     <br /><br />
                     <Link to="/dashboard"><button onClick={handleAddCard}>Add Card</button></Link>
 
                     </form>
-                    
+
                 </div>
             </main>
             <Footer></Footer>
