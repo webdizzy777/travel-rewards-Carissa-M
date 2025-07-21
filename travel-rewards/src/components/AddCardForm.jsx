@@ -22,6 +22,12 @@ function AddCardForm({cards, setCards}){
     const [cardExD, setCardExD] = useState("2025-01-01");
     const [cardNbT, setCardNbT] = useState("");
     const [cardNble, setCardNble] = useState("");
+    const [cardFee, setCardFee] = useState(0);
+    const [cardDate, setCardDate] = useState("2025-01-01");
+    const [cardApr, setCardApr] = useState(0.00);
+    const [cardLoc, setCardLoc] = useState(0);
+    const [cardBal, setCardBal] = useState(0);
+    const [cardDue, setCardDue] = useState("");
  
     //creating function to fill the new card with the initial card data plus the new values we set.
     function handleAddCard(){
@@ -43,8 +49,14 @@ function AddCardForm({cards, setCards}){
             expiringRewards: cardExp,
             expiringDate: cardExD,
             notableBenefitTitle: cardNbT,
-            notableBenefit: cardNble
-        }
+            notableBenefit: cardNble,
+            fee: cardFee, 
+            dateOpened: cardDate,
+            apr: cardApr,
+            creditLimit: cardLoc,
+            balance: cardBal,
+            dueDate: cardDue
+            }
         setCards([...cards, newCard]);
     }
 
@@ -113,79 +125,155 @@ function AddCardForm({cards, setCards}){
         setCardNble(e.target.value);
     }
 
+    function handleAddFee(e){
+        setCardFee(e.target.value);
+    }
+
+    function handleAddDate(e){
+        setCardDate(e.target.value);
+    }
+
+    function handleAddApr(e){
+        setCardApr(e.target.value);
+    }
+
+    function handleAddLoc(e){
+        setCardLoc(e.target.value);
+    }
+
+    function handleAddBal(e){
+        setCardBal(e.target.value);
+    }
+
+    function handleAddDue(e){
+        setCardDue(e.target.value);
+    }
+
     return(
         <>
             <Header></Header>
             <main>
                 <div className="card">
+
+                    <form>
+
                     <label htmlFor="cardName"><b>Card Name</b>
                         <br />
-                        <input type="text" className="addCardInput" value={cardNm} onChange={handleAddName} required />
+                        <input type="text" className="addCardInput" id="cardName" value={cardNm} onChange={handleAddName} required />
                     </label>
-                    <br />
+                    
+
                     <label htmlFor="gas"><b>Gas Points</b>
                         <br />
-                        <input type="number" className="addCardInput" value={cardGs} onChange={handleAddGas} required />
+                        <input type="number" className="addCardInput" id="gas" value={cardGs} onChange={handleAddGas} required />
                     </label>
+
                     <label htmlFor="restaurant"><b>Restaurant Points</b>
                         <br />
-                        <input type="number" className="addCardInput" value={cardRs} onChange={handleAddRestaurant} required />
+                        <input type="number" className="addCardInput" id="restaurant" value={cardRs} onChange={handleAddRestaurant} required />
                     </label>
-                    <br />
+                    
+
                     <label htmlFor="supermarket"><b>Supermarket Points</b>
                         <br />
-                        <input type="number" className="addCardInput" value={cardSp} onChange={handleAddSupermarket} />
+                        <input type="number" className="addCardInput" id="supermarket" value={cardSp} onChange={handleAddSupermarket} />
                     </label>
+
                     <label htmlFor="discount"><b>Discount Store Points</b>
                         <br />
-                        <input type="number" className="addCardInput" value={cardDs} onChange={handleAddDiscount} />
+                        <input type="number" className="addCardInput" id="discount" value={cardDs} onChange={handleAddDiscount} />
                     </label>
+
                     <label htmlFor="wholesale"><b>Wholesale Store Points</b>
                         <br />
-                        <input type="number" className="addCardInput" value={cardWh} onChange={handleAddWholesale} />
+                        <input type="number" className="addCardInput" id="wholesale" value={cardWh} onChange={handleAddWholesale} />
                     </label>
+
                     <label htmlFor="online"><b>Online Shopping Points</b>
                         <br />
-                        <input type="number" className="addCardInput" value={cardDs} onChange={handleAddOnlineShopping} />
+                        <input type="number" className="addCardInput" id="online" value={cardDs} onChange={handleAddOnlineShopping} />
                     </label>
+
                     <label htmlFor="utilities"><b>Utility Points</b>
                         <br />
-                        <input type="number" className="addCardInput" value={cardUt} onChange={handleAddUtilities} />
+                        <input type="number" className="addCardInput" id="utilities" value={cardUt} onChange={handleAddUtilities} />
                     </label>
+
                     <label htmlFor="internet"><b>Internet Points</b>
                         <br />
-                        <input type="number" className="addCardInput" value={cardIn} onChange={handleAddInternet} />
+                        <input type="number" className="addCardInput" id="internet" value={cardIn} onChange={handleAddInternet} />
                     </label>
+
                     <label htmlFor="phone"><b>Phone Points</b>
                         <br />
-                        <input type="number" className="addCardInput" value={cardPh} onChange={handleAddPhone} />
+                        <input type="number" className="addCardInput" id="phone" value={cardPh} onChange={handleAddPhone} />
                     </label>
+
                     <label htmlFor="travel"><b>Travel Points</b>
                         <br />
-                        <input type="number" className="addCardInput" value={cardTr} onChange={handleAddTravel} />
+                        <input type="number" className="addCardInput" id="travel" value={cardTr} onChange={handleAddTravel} />
                     </label>
+
                     <label htmlFor="other"><b>Other Spend Points</b>
                         <br />
-                        <input type="number" className="addCardInput" value={cardOh} onChange={handleAddOther} />
+                        <input type="number" className="addCardInput" id="other" value={cardOh} onChange={handleAddOther} />
                     </label>
+
                     <label htmlFor="expiring"><b>Reward That Expires</b>
                         <br />
-                        <input type="text" className="addCardInput" value={cardExp} onChange={handleAddExpiringRewards} />
+                        <input type="text" className="addCardInput" id="expiring" value={cardExp} onChange={handleAddExpiringRewards} />
                     </label>
+
                     <label htmlFor="expDate"><b>Use By Date</b>
                         <br />
-                        <input type="date" className="addCardInput" value={cardExD} onChange={handleAddExpiringDate} />
+                        <input type="date" className="addCardInput" id="expDate" value={cardExD} onChange={handleAddExpiringDate} />
                     </label>
+
                     <label htmlFor="notableTitle"><b>Title for Notable Benefit</b>
                         <br />
-                        <input type="text" className="addCardInput" value={cardNbT} onChange={handleAddNotableTitle} />
+                        <input type="text" className="addCardInput" id="notableTitle" value={cardNbT} onChange={handleAddNotableTitle} />
                     </label>
-                    <label htmlFor="notable"><b>Use By Date</b>
+
+                    <label htmlFor="notable"><b>Notable Benefit Description</b>
                         <br />
-                        <input type="text" className="addCardInput" value={cardNble} onChange={handleAddNotableBenefit} />
+                        <input type="text" className="addCardInput" id="notable" value={cardNble} onChange={handleAddNotableBenefit} />
                     </label>
+
+                    <label htmlFor="fee"><b>Annual Fee</b>
+                        <br />
+                        <input type="number" className="addCardInput" id="fee" value={cardFee} onChange={handleAddFee} />
+                    </label>
+
+                    <label htmlFor="openDate"><b>Date Opened</b>
+                        <br />
+                        <input type="date" className="addCardInput" id="openDate" value={cardDate} onChange={handleAddDate} />
+                    </label>
+
+                    <label htmlFor="apr"><b>APR</b>
+                        <br />
+                        <input type="number" step={0.01} className="addCardInput" id="apr" value={cardApr} onChange={handleAddApr} />
+                    </label>
+
+                    <label htmlFor="loc"><b>Credit Limit</b>
+                        <br />
+                        <input type="number" className="addCardInput" id="loc" value={cardLoc} onChange={handleAddLoc} />
+                    </label>
+
+                    <label htmlFor="bal"><b>Balance</b>
+                        <br />
+                        <input type="number" step={0.01} className="addCardInput" id="bal" value={cardBal} onChange={handleAddBal} />
+                    </label>
+
+                    <label htmlFor="due"><b>Day of Month Due</b>
+                        <br />
+                        <input type="text" className="addCardInput" id="due" value={cardDue} onChange={handleAddDue} />
+                    </label>
+
                     <br /><br />
                     <Link to="/dashboard"><button onClick={handleAddCard}>Add Card</button></Link>
+
+                    </form>
+                    
                 </div>
             </main>
             <Footer></Footer>
