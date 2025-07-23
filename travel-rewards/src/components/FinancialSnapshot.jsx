@@ -11,21 +11,21 @@ function FinancialSnapshot({cards}){
         const utilization = ((c.balance / c.creditLimit).toFixed(2))*100;
         return (
             <tr key={c.id}>
-            <td>{c.cardName}</td>
-            <td>${c.fee}</td>
-            <td>{formatDate(c.dateOpened)}</td>
-            <td>{c.apr === lowestApr
+            <td title={c.cardName}>{c.cardName}</td>
+            <td title={c.fee}>${c.fee}</td>
+            <td title={formatDate(c.dateOpened)}>{formatDate(c.dateOpened)}</td>
+            <td title={c.apr}>{c.apr === lowestApr
                 ? <span className="green"><b>{c.apr}%</b></span>
                 : `${c.apr}%`
                 }</td>
-            <td>{formatCurrency(c.creditLimit)}</td>
-            <td>{formatCurrency(c.balance)}</td>
-            <td>
+            <td title={formatCurrency(c.creditLimit)}>{formatCurrency(c.creditLimit)}</td>
+            <td title={formatCurrency(c.balance)}>{formatCurrency(c.balance)}</td>
+            <td title={utilization}>
                 {utilization > 30
                 ? <span className="red">{utilization}%</span>
                 : `${utilization}%`}
             </td>
-            <td>{formatDueDate(c.dueDate)}</td>
+            <td title={formatDueDate(c.dueDate)}>{formatDueDate(c.dueDate)}</td>
             </tr>
         );
     });
@@ -37,14 +37,14 @@ function FinancialSnapshot({cards}){
                 <table>
                     <thead>
                         <tr>
-                            <th>Card Name</th>
-                            <th>Fee</th>
-                            <th>Date Opened</th>
-                            <th>APR</th>
-                            <th>Credit Limit</th>
-                            <th>Balance</th>
-                            <th>Utilization</th>
-                            <th>Due Date</th>
+                            <th title="Card Name">Card Name</th>
+                            <th title="Fee">Fee</th>
+                            <th title="Date Opened">Date Opened</th>
+                            <th title="APR">APR</th>
+                            <th title="Credit Limit">Credit Limit</th>
+                            <th title="Balance">Balance</th>
+                            <th title="Utilization">Utilization</th>
+                            <th title="Due Date">Due Date</th>
                         </tr>
                     </thead>
                     <tbody>
