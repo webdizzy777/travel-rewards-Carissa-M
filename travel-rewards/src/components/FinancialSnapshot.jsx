@@ -23,9 +23,9 @@ function FinancialSnapshot({cards}){
             <td title={utilization}>
                 {utilization > 30
                 ? <span className="red">{utilization}%</span>
-                : `${utilization}%`}
+                : `${(isNaN(utilization)) ? "-" : (utilization + '%')}`}
             </td>
-            <td title={formatDueDate(c.dueDate)}>{formatDueDate(c.dueDate)}</td>
+            <td title={formatDueDate(c.dueDate)}>{(formatDueDate(c.dueDate)) ? formatDueDate(c.dueDate) : "-"}</td>
             </tr>
         );
     });

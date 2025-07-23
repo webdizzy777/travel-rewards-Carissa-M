@@ -32,6 +32,6 @@ export function formatDueDate(dueDate){
     }else if((dueDate >= 4 && dueDate <= 20) || (dueDate >= 24 && dueDate <= 30)){
         return `${dueDate}th`;
     }else{
-        return dueDate
+        return "-";
     }
 }
