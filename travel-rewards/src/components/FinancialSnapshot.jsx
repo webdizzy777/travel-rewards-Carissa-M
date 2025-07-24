@@ -20,7 +20,7 @@ function FinancialSnapshot({cards}){
                 }</td>
             <td title={formatCurrency(c.creditLimit)}>{formatCurrency(c.creditLimit)}</td>
             <td title={formatCurrency(c.balance)}>{formatCurrency(c.balance)}</td>
-            <td title={utilization}>
+            <td title={(isNaN(utilization)) ? "-" : (utilization + '%')}>
                 {utilization > 30
                 ? <span className="red">{utilization}%</span>
                 : `${(isNaN(utilization)) ? "-" : (utilization + '%')}`}
