@@ -34,6 +34,7 @@ function FinancialSnapshot({cards}){
     return(
         <>
             <div className="card">
+                <h2>Financial Snapshot</h2>
                 <table>
                     <thead>
                         <tr>
